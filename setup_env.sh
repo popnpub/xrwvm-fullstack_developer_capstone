@@ -25,4 +25,13 @@ python3 -m pip install -U -r requirements.txt
 # npm install
 # npm run build => build l'app react dans le repertoir build
 
+
+# Mongo DB
+# Build de l'image docker pour le service d'access au donnees MongoDB.
+# Doit etre fait a chaque qu'on modifie app.js
+# docker build . -t nodeapp
+
+# Pour run l'application multi conteneur:
+# docker-compose up
+
 source ~/.bashrc
