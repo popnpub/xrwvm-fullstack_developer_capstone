@@ -21,17 +21,28 @@ python3 -m pip install -U -r requirements.txt
 
 # python3 manage.py runserver
 
-# depuis le repertoire front end executer les commande suivante:
+# depuis le repertoire server/frontend executer les commandes suivantes:
 # npm install
 # npm run build => build l'app react dans le repertoir build
 
 
 # Mongo DB
 # Build de l'image docker pour le service d'access au donnees MongoDB.
-# Doit etre fait a chaque qu'on modifie app.js
+# Doit etre fait a chaque qu'on modifie app.js dans server/database
 # docker build . -t nodeapp
 
 # Pour run l'application multi conteneur:
 # docker-compose up
+
+
+# Pour selection le project code engine:
+# ibmcloud ce project list
+# ibmcloud ce project select -n "Code Engine - sn-labs-popnpub75"
+
+# Deployer le service d'analyse de sentiment (repertoire micro service)
+# cd xrwvm-fullstack_developer_capstone/server/djangoapp/microservices
+# docker build . -t us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
+# docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
+# docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
 
 source ~/.bashrc
