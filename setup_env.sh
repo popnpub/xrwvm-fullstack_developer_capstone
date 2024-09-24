@@ -46,4 +46,15 @@ python3 -m pip install -U -r requirements.txt
 # docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
 # ibmcloud ce application create --name sentianalyzer --image us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer --registry-secret icr-secret --port 5000
 
+# Lister les images de la registry: ibmcloud cr images
+
+# Build server image. Execute following commands from server directory: 
+# MY_NAMESPACE=$(ibmcloud cr namespaces | grep sn-labs-)
+# echo $MY_NAMESPACE
+# docker build -t us.icr.io/$MY_NAMESPACE/dealership .
+# docker push us.icr.io/$MY_NAMESPACE/dealership
+# Deploiement sur le cloud
+# kubectl apply -f deployment.yaml
+# kubectl port-forward deployment.apps/dealership 8000:8000
+
 source ~/.bashrc
